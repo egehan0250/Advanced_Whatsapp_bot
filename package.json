@@ -1,0 +1,22 @@
+{
+  "name": "whatsapp-bot-advanced",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Egehan | github.com/egehan0250",
+  "license": "MIT",
+  "dependencies": {
+    "chalk": "^4.1.2",
+    "fs": "^0.0.1-security",
+    "glob": "^10.3.10",
+    "moment": "^2.29.4",
+    "path": "^0.12.7",
+    "qrcode-terminal": "^0.12.0",
+    "whatsapp-web.js": "^1.23.0"
+  }
+}
