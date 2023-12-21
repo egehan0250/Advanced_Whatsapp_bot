@@ -1,15 +1,15 @@
 const { Client, LocalAuth } = require("whatsapp-web.js");
 const qrcode = require("qrcode-terminal");
-global.path = require('path');
-global.fs = require('fs');
-global.chalk = require('chalk');
-global.moment = require('moment');
-moment.locale('tr');
-global.config = require('./config');
-const Loader = require('./src/events/commandHandler');
+global.path = require("path");
+global.fs = require("fs");
+global.chalk = require("chalk");
+global.moment = require("moment");
+moment.locale("tr");
+global.config = require("./config");
+const Loader = require("./src/events/commandHandler");
 
 let sessionData;
- 
+
 const client = new Client({
   puppeteer: {
     headless: true,
@@ -31,7 +31,7 @@ client.on("qr", (qr) => {
 client.on("message", async (message) => {
   if (
     !config.prefix.some((prefix) => message.body.startsWith(prefix)) ||
-    message.from.endsWith('@g.us')
+    message.from.endsWith("@g.us")
   )
     return;
 

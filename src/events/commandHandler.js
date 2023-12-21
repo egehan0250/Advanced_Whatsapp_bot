@@ -1,9 +1,11 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 module.exports = {
   loadEvents: (client) => {
-    const eventFiles = fs.readdirSync(path.join(__dirname)).filter(file => file.endsWith('.js'));
+    const eventFiles = fs
+      .readdirSync(path.join(__dirname))
+      .filter((file) => file.endsWith(".js"));
     for (const file of eventFiles) {
       const event = require(path.join(__dirname, file));
       if (event.once) {
@@ -15,9 +17,11 @@ module.exports = {
   },
 
   loadCommands: (client) => {
-    const commandFiles = fs.readdirSync(path.join(__dirname, '../commands')).filter(file => file.endsWith('.js'));
+    const commandFiles = fs
+      .readdirSync(path.join(__dirname, "../commands"))
+      .filter((file) => file.endsWith(".js"));
     for (const file of commandFiles) {
-      const cmd = require(path.join(__dirname, '../commands', file));
+      const cmd = require(path.join(__dirname, "../commands", file));
       client.commands.set(cmd.name, cmd);
     }
   },
